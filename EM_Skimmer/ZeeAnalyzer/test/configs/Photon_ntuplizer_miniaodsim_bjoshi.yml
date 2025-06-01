@@ -1,0 +1,24 @@
+InputDataset:
+  - "/DoublePhoton_Pt-5To300-gun/RunIISummer20UL18MiniAODv2-FlatPU0to70EdalIdealGT_EdalIdealGT_106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM"
+OutputFile:
+  - 'GammaRecHits_ntuple.root'
+TransferOutputs: True
+TransferLogs: True
+PsetName: 'Photon_RecHit_AOD_cfg.py'
+MaxJobRunTime: 2750
+InputDBS: 'global'
+Splitting: 'FileBased'
+UnitsPerJob: 20
+FilePath: '/store/user/bjoshi'
+StorageSite: 'T2_US_Florida'
+UseWhitelist: False
+UseBlacklist: False
+IgnoreGlobalBlacklist: False
+Whitelist: 
+  - 'T3_CH_CERN_CAF'
+Blacklist:
+  - 'T1_US_FNAL'
+  - 'T2_UA_KIPT'
+  - 'T2_UK_London_Brunel'
+  - 'T2_CH_CSCS'
+  - 'T2_US_*'

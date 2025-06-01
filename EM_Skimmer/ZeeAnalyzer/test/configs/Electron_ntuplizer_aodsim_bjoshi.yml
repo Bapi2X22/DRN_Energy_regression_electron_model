@@ -1,0 +1,25 @@
+InputDataset:
+  - "/DoubleElectron_Pt-1To300-gun/RunIISummer20UL18RECO-FlatPU0to70EdalIdealGT_EdalIdealGT_106X_upgrade2018_realistic_v11_L1v1_EcalIdealIC-v2/AODSIM"
+  - '/DoubleElectron_FlatPt-1To300/RunIISummer19UL18RECO-FlatPU0to70RAW_106X_upgrade2018_realistic_v11_L1v1_ext2-v2/AODSIM'
+OutputFile:
+  - 'ElectronRecHits_ntuple.root'
+TransferOutputs: True
+TransferLogs: True
+PsetName: 'Electron_RecHit_AOD_cfg.py'
+MaxJobRunTime: 2750
+InputDBS: 'global'
+Splitting: 'FileBased'
+UnitsPerJob: 20
+FilePath: '/store/user/bjoshi'
+StorageSite: 'T2_US_Florida'
+UseWhitelist: False
+UseBlacklist: False
+IgnoreGlobalBlacklist: False
+Whitelist: 
+  - 'T3_CH_CERN_CAF'
+Blacklist:
+  - 'T1_US_FNAL'
+  - 'T2_UA_KIPT'
+  - 'T2_UK_London_Brunel'
+  - 'T2_CH_CSCS'
+  - 'T2_US_*'

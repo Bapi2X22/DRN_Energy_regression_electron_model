@@ -1,0 +1,29 @@
+InputDataset:
+  - '/EGamma/Run2018A-12Nov2019_UL2018-v2/AOD'
+  - '/EGamma/Run2018B-12Nov2019_UL2018-v2/AOD'
+  - '/EGamma/Run2018C-12Nov2019_UL2018-v2/AOD'
+  - '/EGamma/Run2018D-12Nov2019_UL2018-v4/AOD'
+OutputFile:
+  - 'GammaRecHits_ntuple.root'
+JSON: 'json/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt'
+GlobalTag: '106X_dataRun2_v27' 
+TransferOutputs: True
+TransferLogs: True
+PsetName: 'Photon_RecHit_AOD_cfg.py'
+MaxJobRunTime: 2750
+InputDBS: 'global'
+Splitting: 'LumiBased'
+UnitsPerJob: 10
+FilePath: '/store/user/bjoshi'
+StorageSite: 'T2_US_Florida'
+UseWhitelist: False
+UseBlacklist: False
+IgnoreGlobalBlacklist: False
+Whitelist: 
+  - 'T3_CH_CERN_CAF'
+Blacklist:
+  - 'T1_US_FNAL'
+  - 'T2_UA_KIPT'
+  - 'T2_UK_London_Brunel'
+  - 'T2_CH_CSCS'
+  - 'T2_US_*'
