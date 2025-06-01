@@ -1,0 +1,47 @@
+executable            = DRN_job_withFileCheck.sh
+output                =output1/myjob.$(ClusterId).$(ProcId).out
+error                 =output1/myjob.$(ClusterId).$(ProcId).err
+log                   =output1/myjob.$(ClusterId).log
+should_transfer_files=YES
+request_memory = 3.0 GB
++MaxRuntime = 6*24*60*60
+use_x509userproxy = True
+x509userproxy =  /afs/cern.ch/user/b/bbapi/x509up_u177868
+
++SingularityBind = "/cvmfs/unpacked.cern.ch/registry.hub.docker.com/fastml"
++SingularityBindCVMFS = True
+
+environment = "HOME=/afs/cern.ch/user/b/bbapi XrdSecPROTOCOL=gsi,unix"
+
+when_to_transfer_output = ON_EXIT_OR_EVICT
+
+request_cpus =$(DETECTED_CORES)
+
+queue arguments from (
+        pfThresTL235_pedTL235 /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER 0 200
+        pfThresTL235_pedTL235 /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER 200 200
+        pfThresTL235_pedTL235 /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER 400 200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     600     200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     800     200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     1000    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     1200    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     1400    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     1600    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     1800    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     2000    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     2200    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     2400    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     2600    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     2800    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     3000    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     3200    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     3400    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     3600    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     3800    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     4000    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     4200    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     4400    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     4600    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     4800    200
+        pfThresTL235_pedTL235   /FourElectronsGunPt1-500_13TeV-pythia8_RunIISummer20UL18_pfThresTL235_pedTL235_AODSIM/bmarzocc-AODSIM-e4ec85f40300f50bb7065e30c2f64326/USER     4800    197
+)

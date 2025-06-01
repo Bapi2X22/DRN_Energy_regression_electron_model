@@ -1,0 +1,31 @@
+executable            = DRN_job_withFileCheck.sh
+output                =output1/myjob.$(ClusterId).$(ProcId).out
+error                 =output1/myjob.$(ClusterId).$(ProcId).err
+log                   =output1/myjob.$(ClusterId).log
+should_transfer_files=YES
+request_memory = 3.0 GB
++MaxRuntime = 6*24*60*60
+use_x509userproxy = True
+x509userproxy =  /afs/cern.ch/user/b/bbapi/x509up_u177868
+
++SingularityBind = "/cvmfs/unpacked.cern.ch/registry.hub.docker.com/fastml"
++SingularityBindCVMFS = True
+
+environment = "HOME=/afs/cern.ch/user/b/bbapi XrdSecPROTOCOL=gsi,unix"
+
+when_to_transfer_output = ON_EXIT_OR_EVICT
+
+request_cpus =$(DETECTED_CORES)
+
+queue arguments from (
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 0 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 2 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 4 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 6 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 8 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 10 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 12 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 14 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 16 2
+    four_electron_sample /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18RECO-106X_upgrade2018_realistic_v11_L1v1-v1/AODSIM 18 2
+)
