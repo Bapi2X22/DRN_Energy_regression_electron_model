@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "generate1Dplot.C": "cpp",
+        "Myclass.C": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "iostream": "cpp",
+        "Overlay1D .C": "cpp",
+        "Overlay1D.C": "cpp"
+    }
+}
